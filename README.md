@@ -42,13 +42,14 @@ Or install it yourself as:
 The "texture" key in _config.yml is used to customize the theme data.
 ```yaml
 texture:
-  title: Hyunjoong Kim
-  tagline: Data Sciencist
+  title: Adam Denisov
+  tagline: Developer. Designer
   date_format: "%b %-d, %Y"
 
   social_links:
-    github:  hjben
-    linkedIn: in/hyunjoong-kim-72b523143 # format: locale/username
+    twitter: thelehhman
+    github:  thelehhman
+    linkedIn: in/thelehhman # format: locale/username
 ```
 
 **Styling**
@@ -57,7 +58,7 @@ Multiple header styles are supported using the "style" property under texture in
 
 ```yaml
 texture:
-  style: blue
+  style: [yellow|red|black|blue|green|purple]
 ```
 
 For example, the blue style looks like this:

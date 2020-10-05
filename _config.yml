@@ -18,18 +18,18 @@ sass:
 
 permalink: /posts/:title/
 texture:
-  title: Adam Denisov
-  tagline: Developer. Designer
+  title: Hyunjoong Kim
+  tagline: Developer. Data Scientist
   date_format: "%b %-d, %Y"
-  style: black
+  style: blue
   showNav: false
   showPicker: true
 
   # generate social links in footer
   social_links:
     twitter: thelehhman
-    github:  thelehhman
-    linkedIn: in/thelehhman
+    github:  hjben
+    linkedIn: in/hyunjoong-kim-72b523143
     rss: rss
  
 
