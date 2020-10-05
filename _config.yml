@@ -9,8 +9,6 @@ show_excerpts: true # set to true to show excerpts on the homepage
 url: "https://hjben.github.io"
 baseurl: ""
 
-theme: texture
-
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
@@ -27,7 +25,6 @@ texture:
 
   # generate social links in footer
   social_links:
-    twitter: thelehhman
     github:  hjben
     linkedIn: in/hyunjoong-kim-72b523143
     rss: rss
@@ -39,7 +36,7 @@ texture:
 # - about.md
 
 # Build settings
-# theme: texture
+theme: texture
 
 plugins:
   - jekyll-seo-tag
