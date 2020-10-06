@@ -1,43 +1,31 @@
-title: Texture Theme
-author: hjben
-email: hj.ben.kim@gmail.com
-description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-show_excerpts: true # set to true to show excerpts on the homepage
-url: "https://hjben.github.io"
-baseurl: ""
+title: Ben's Tech Blog
+lang: en
+description: Opinionated github flavored standard document theme for open source projects, with few options, but everything!
 
-# Minima date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-sass:
-  sass_dir: _sass
+theme: null
 
-permalink: /posts/:title/
-texture:
-  title: Hyunjoong Kim
-  tagline: Developer. Data Scientist
-  date_format: "%b %-d, %Y"
-  style: blue
-  showNav: false
-  showPicker: true
+# debug:
+#   compress: true
+#   dist: false
+#   shortcodes: true
 
-  # generate social links in footer
-  social_links:
-    github:  hjben
-    linkedIn: in/hyunjoong-kim-72b523143
-    rss: rss
- 
-
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.md
-
-# Build settings
-theme: texture
+readme_index:
+  with_frontmatter: true
 
 plugins:
-  - jekyll-seo-tag
-#  - jekyll-feed
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+
+exclude:
+  - Makefile
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - requirements.txt
+  - node_modules
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - jekyll-rtd-theme.gemspec
