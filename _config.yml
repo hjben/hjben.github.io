@@ -10,7 +10,7 @@ url: "https://hjben.github.io/" # the base hostname & protocol for your site, e.
 
 # SEO PLUGIN
 social:
-  name: Your Name
+  name: hjben
   links:
     - https://twitter.com/BenBalter
     - https://www.facebook.com/ben.balter
@@ -34,7 +34,7 @@ email: hj.ben.kim@gmail.com # email for form submission
 
 #ctwitter_username: jan_czizikow # replace with your_twitter_username or comment to remove link from footer
 github_username:  hjben # replace with your_github_username or comment to remove link from footer
-#cinstagram_username: shanlongjj # replace with your_instagram_username or comment to remove link from footer
+instagram_username: ben_likes_ # replace with your_instagram_username or comment to remove link from footer
 
 disqus:
   shortname: hjben # to enable comments replace with your_disqus_shortname
