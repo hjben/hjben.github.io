@@ -1,38 +1,71 @@
-title: "Blog Title"
-author: "Blog Author"
-description: "Made with <b style=\"color: #f45;\">&lt;3</b> by <b><a href=\"https://github.com/niklasbuschmann\">@niklasbuschmann</a></b>"
+# SITE CONFIGURATION
+title: Ben's Tech Blog # your site title
+author: GitHub User # You :P
+description: > # Meta description of Homepage
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://hjben.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+
+# SEO PLUGIN
+social:
+  name: Your Name
+  links:
+    - https://twitter.com/BenBalter
+    - https://www.facebook.com/ben.balter
+    - https://www.linkedin.com/in/BenBalter
+    - https://plus.google.com/+BenBalter
+    - https://github.com/benbalter
+    - https://keybase.io/benbalter
+
+# THEME SETTINGS
+navigation: # Navigation links
+  - {name: 'Home', link: '/'}
+  - {name: 'About', link: '/about'}
+  - {name: 'Contact', link: '/contact'}
+
+tagline: >
+  Modern Jekyll theme focused on speed performance &amp; SEO best practices
+
+hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+
+email: hj.ben.kim@gmail.com # email for form submission
+
+#ctwitter_username: jan_czizikow # replace with your_twitter_username or comment to remove link from footer
+github_username:  hjben # replace with your_github_username or comment to remove link from footer
+#cinstagram_username: shanlongjj # replace with your_instagram_username or comment to remove link from footer
+
+disqus:
+  shortname: hjben # to enable comments replace with your_disqus_shortname
+
+# google_tag_manager: GTM-XXXXXXX # Uncomment to enable GTM. Replace GTM-XXXXXXX with your GTM container ID
+
+service_worker: true
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: rouge # or pygments or null
+# theme: jekyll-sleek # Uncomment if you're using the theme as a ruby gem
+exclude:
+  - README.md
+  - node_modules
+  - script
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - npm-debug.log
+  - gulpfile.js
+  - sleek.jpg
+
+include: ['_pages']
 permalink: /:title/
-lang: "en"
-excerpt_separator: "\n\n\n"
-date_format: "%B %d, %Y"
 
-# Layout
-
-sidebar: false               # show a sidebar instead of the usual header
-show_excerpts: false         # show article excerpts on the home page
-show_related: true           # show the previous and next links after every post
-show_description: true       # show the site description in the sidebar
-show_title: false            # always keep the site title visible
-
-# Styling
-
-dark_header: false           # always keep the header dark
-minimal: false               # use simpler style
-
-# Menu
-
-navigation:
-  - {file: "index.html", icon: home}
-  - {file: "README.md", icon: address-card}
-
-external:                    # see http://fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:hj.ben.kim@gmail.com"}
-  - {title: Github, icon: github, url: "https://github.com/hjben"}
-#  - {title: Subscribe, icon: rss, url: "/feed.xml"}
-
-comments:
-#  disqus_shortname: ""      # see https://disqus.com/
-#  isso_domain: ""           # see https://posativ.org/isso/
+compress_html:
+  clippings: all
 
 plugins:
- - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
