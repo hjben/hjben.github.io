@@ -57,7 +57,7 @@ http://www.tipue.com/search
 .tipue_search_left
 {
      float: left;
-     padding: 0 9px 0 0;
+     padding: 6px 9px 0 0;
 }
 .tipue_search_right
 {
@@ -71,17 +71,17 @@ http://www.tipue.com/search
 #tipue_search_content
 {
      max-width: 750px;
-	padding-top: 15px;
-	margin: 0;
+	 padding-top: 15px;
+	 margin: 0;
 }
 #tipue_search_results_count
 {
-	color: #333;
+	 color: #333;
 }
 #tipue_search_warning
 {
      color: #333;    
-	margin: 7px 0;
+	 margin: 7px 0;
 }
 #tipue_search_warning a
 {
