@@ -37,27 +37,27 @@ http://www.tipue.com/search
 
 #tipue_search_input
 {
-    color: #333;
-    max-width: 210px;
-    max-height: 15px;
-	padding: 17px;
-	border: 1px solid #e3e3e3;
-	border-radius: 0;
+     color: #333;
+     max-width: 210px;
+     max-height: 15px;
+	 padding: 17px;
+	 border: 1px solid #e3e3e3;
+	 border-radius: 0;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-     box-shadow: none; 
-	outline: 0;
-	margin: 0;
+     box-shadow: none;
+	 outline: 0;
+	 margin: 0;
 }
 .tipue_search_icon
 {
-     width: 15px;
-     height: 15px;
+     width: 24px;
+     height: 24px;
 }
 .tipue_search_left
 {
      float: left;
-     padding: 15px 9px 0 0;
+     padding: 9px 9px 0 0;
 }
 .tipue_search_right
 {
