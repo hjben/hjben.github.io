@@ -2,7 +2,7 @@
 title: Data Architect & Analytics Lab # your site title
 author: Ben # You
 description: > # Meta description of Homepage
-  Ben's Tech Lab
+  Data Architect & Analytics Lab
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hjben.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -25,7 +25,7 @@ navigation: # Navigation links
   - {name: 'Contact', link: '/contact'}
 
 tagline: >
-  Data Architect & Analytics Lab
+  Ben's Tech lab
 
 hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
