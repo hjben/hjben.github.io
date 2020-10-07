@@ -28,12 +28,12 @@ layout: compress
       {% if post.categories or page.categories %}
         <div class="hero__categories">
           {% if post %}
-            {% assign categories = post.categories %}
+            {% assign categories = post.category %}
           {% else %}
-            {% assign categories = page.categories %}
+            {% assign categories = page.category %}
           {% endif %}
           {% for category in categories %}
-            <a class="label" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+            <a class="label" href="{{site.baseurl}}/category/#{{category|slugize}}">{{category}}</a>
             {% unless forloop.last %}&nbsp;{% endunless %}
           {% endfor %}
         </div>
