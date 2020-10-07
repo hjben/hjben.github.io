@@ -1,8 +1,8 @@
 # SITE CONFIGURATION
-title: Ben's Tech Blog # your site title
+title: About Data # your site title
 author: GitHub User # You :P
 description: > # Meta description of Homepage
-  About Data Science
+  Ben's Tech Blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hjben.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
