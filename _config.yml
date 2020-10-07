@@ -45,8 +45,8 @@ tipue_search:
     collections: []
   exclude:
     files: [search.html, index.html, tags.html]
-      categories: []
-      tags: []
+    categories: []
+    tags: []
 
 google_tag_manager: GTM-TXCBNFJ # Uncomment to enable GTM. Replace GTM-XXXXXXX with your GTM container ID
 
