@@ -25,7 +25,7 @@ layout: compress
   <div class="hero dark-bg">
   {% endif %}
     <div class="hero__wrap">
-      {% if post.categories or page.categories %}
+      {% if post.category or page.category %}
         <div class="hero__categories">
           {% if post %}
             {% assign categories = post.category %}
