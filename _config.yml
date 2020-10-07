@@ -27,13 +27,13 @@ navigation: # Navigation links
   - {name: 'Contact', link: '/contact'}
 
 tagline: >
-  Modern Jekyll theme focused on speed performance &amp; SEO best practices
+  Welcome to visit my blog
 
 hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
 email: hj.ben.kim@gmail.com # email for form submission
 
-#ctwitter_username: jan_czizikow # replace with your_twitter_username or comment to remove link from footer
+# twitter_username: jan_czizikow # replace with your_twitter_username or comment to remove link from footer
 github_username:  hjben # replace with your_github_username or comment to remove link from footer
 instagram_username: ben_likes_ # replace with your_instagram_username or comment to remove link from footer
 
