@@ -22,6 +22,7 @@ navigation: # Navigation links
   - {name: 'Home', link: '/'}
   - {name: 'About', link: '/about'}
   - {name: 'Category', link: '/category'}
+  - {name: 'Contact', link: '/contact'}
 
 tagline: >
   Welcome to visit my blog
