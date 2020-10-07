@@ -4,7 +4,7 @@ author: GitHub User # You :P
 description: > # Meta description of Homepage
   About Data Science
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://hjben.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://hjben.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
 social:
