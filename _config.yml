@@ -1,8 +1,8 @@
 # SITE CONFIGURATION
-title: DAAL # your site title
+title: Data Architect & Analytics Lab # your site title
 author: Ben # You
 description: > # Meta description of Homepage
-  Data Architect & Analytics Lab
+  Ben's Tech Lab
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hjben.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
