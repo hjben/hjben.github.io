@@ -1,7 +1,5 @@
 # SITE CONFIGURATION
-title: Data Architect
-
-  & Analytics Lab # your site title
+title: DAAL # your site title
 author: Ben # You
 description: > # Meta description of Homepage
   Data Architect & Analytics Lab
@@ -27,7 +25,7 @@ navigation: # Navigation links
   - {name: 'Contact', link: '/contact'}
 
 tagline: >
-  Ben's Tech Blog
+  Data Architect & Analytics Lab
 
 hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
