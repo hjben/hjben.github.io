@@ -8,6 +8,8 @@ If you have any suggestions or questions, fill in the form or [email me](mailto:
 
 Thanks to visit DAAL page.
 
+---
+
 {% include form.html %}
 
 {% include modal.html %}
