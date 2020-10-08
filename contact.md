@@ -9,7 +9,7 @@ If you have any suggestions or questions, fill in the form or [email me](mailto:
 Thanks to visit DAAL page.
 
 ---
-
+<br><br>
 {% include form.html %}
 
 {% include modal.html %}
