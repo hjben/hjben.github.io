@@ -4,7 +4,8 @@ title: About
 permalink: /about/
 ---
 
-## Welcome to visit Ben's Data Lab.
+## Welcome to visit Ben's Data Lab!
+<br>
 
 ### 🔭 I’m currently working on ...
 - Data Scientist & Developer
