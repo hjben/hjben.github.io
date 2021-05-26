@@ -27,7 +27,7 @@ category: [Data Engineering]
  
 (4) All files related to this practice are in my github. If you're used to Dockerfile, you can revise the image with Dockerfile in github.
 
-[https://github.com/hjben/docker](https://github.com/hjben/docker) <br/>
+[https://github.com/hjben/docker](https://github.com/hjben/docker)   
 Sub-folders related on: hadoop-eco, hadoop, zookeeper, mariadb
 
 (5) This practice uses shell script files in folder named by _docker-script_, where are sub-folder of each folder in github. This shell files get some parameter from user, and then constructs cluster and executes some files needed. docker-compose.yml file also be generated automatically in same path, and deleted when the docker-compose is down.
@@ -83,10 +83,12 @@ e.g.
 (3) All process are well done, you can access hadoop web ui at the host. addresses for web ui are below.
 
 - job management: localhost:8088
-![hadoop-ui-job](../_img/posts/hadoop-cluster/hadoop-ui-job.png)
+
+![hadoop-ui-job](_img/posts/hadoop-cluster/hadoop-ui-job.png)
 
 - HDFS management: loclahost:9870
-![hadoop-ui-hdfs](../_img/posts/hadoop-cluster/hadoop-ui-hdfs.png)
+
+![hadoop-ui-hdfs](_img/posts/hadoop-cluster/hadoop-ui-hdfs.png)
 
 ### 2. Access to hadoop master shell
 (1) CLI used above is occupied by foreground process of hadoop, Open a new CLI(=shell) at host. Then, move into the path docker scripts are in.
@@ -164,7 +166,7 @@ Hive service needs HDFS, so you should execute hive where the hadoop cluster is 
 
 (3) Web ui address of hiveserver is _localhost:10002_.
 
-![hive-ui](../_img/posts/hadoop-cluster/hive-ui.png)
+![hive-ui](_img/posts/hadoop-cluster/hive-ui.png)
 
 ### 2. Connect to hiveserver with beeline CLI
 Beeline is a CLI to connect hiveserver and run some hive commands. It's bundle of hive installation.
@@ -224,7 +226,7 @@ Hbase saves their meta information in zookeeper for smooth server management and
 
 (3) Web ui address of hbase master is _localhost:16010_.
 
-![hbase-ui](../_img/posts/hadoop-cluster/hbase-ui.png)
+![hbase-ui](_img/posts/hadoop-cluster/hbase-ui.png)
 
 ### 3. Create and delete Hbase data
 
