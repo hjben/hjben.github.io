@@ -27,14 +27,14 @@ category: [Data Engineering]
  
 (4) All files related to this practice are in my github. If you're used to Dockerfile, you can revise the image with Dockerfile in github.
 
-https://github.com/hjben/docker <br/>
+[https://github.com/hjben/docker](https://github.com/hjben/docker) <br/>
 Sub-folders related on: hadoop-eco, hadoop, zookeeper, mariadb
 
 (5) This practice uses shell script files in folder named by _docker-script_, where are sub-folder of each folder in github. This shell files get some parameter from user, and then constructs cluster and executes some files needed. docker-compose.yml file also be generated automatically in same path, and deleted when the docker-compose is down.
 
 (6) The docker images are in my docker hub. You can download them with _docker pull_ command.
 
-https://hub.docker.com/search?q=hjben&type=image
+[https://hub.docker.com/search?q=hjben&type=image](https://hub.docker.com/search?q=hjben&type=image)
 
 (7) MariaDB used in hive and sqoop have similar usage with mysql. It's open-source version of mysql.
 
@@ -53,15 +53,15 @@ docker pull hjben/mariadb:10.5
 (1) Download the shell script in _hadoop-eco/docker-script_ folder at the github and move them to the path where docker commands are available.
 
 (2) With _./compose-up.sh_ command, docker network and containers are generated. parameters must be entered behind the command with one blank (space-bar) and arranged by the order below. The command will not be executed when lack of number of parameters or wrong input type detected.
-- <hadoop_version>: Version of hadoop (3.3.0 and 3.2.2 are available now)
-- <(The # of) slaves (integer)>: The number of hadoop slaves (number between 1 and 5)
-- <hdfs_path>: Host path for saving hdfs data
-- <hadoop_log_path>: Host path for saving hadoop log
-- <hbase_log_path>: Host path for saving hbase log
-- <hive_log_path>: Host path for saving hive log
-- <sqoop_log_path>: Host path for saving sqoop log
-- <mariaDB_root_password>: Root password of mariaDB (_mariadb_ is recommended)
-- <mariaDB_data_path>: Host path for saving mariaDB data
+- hadoop_version: Version of hadoop (3.3.0 and 3.2.2 are available now)
+- (The # of) slaves: The number of hadoop slaves (integer between 1 and 5)
+- hdfs_path: Host path for saving hdfs data
+- hadoop_log_path: Host path for saving hadoop log
+- hbase_log_path: Host path for saving hbase log
+- hive_log_path: Host path for saving hive log
+- sqoop_log_path: Host path for saving sqoop log
+- mariaDB_root_password: Root password of mariaDB (mariadb is recommended)
+- mariaDB_data_path: Host path for saving mariaDB data
 
 e.g.
 ```
