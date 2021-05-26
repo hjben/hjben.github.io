@@ -126,7 +126,14 @@ Livy is a REST API server made for ease spark-job control at outside of the clus
 
 (3) The REST communication port of livy server is 8998, and have same of web ui. Then the adress of livy web ui is localhost:8998.
 
-﻿﻿<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/spark-cluster/livy-ui.png" alt="livy-ui"> 
+﻿﻿<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/spark-cluster/livy-ui.png" alt="livy-ui">
+
+### 2. Livy sample code test
+<a href="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_file/spark-cluster/livy-sample.zip">livy-sample.zip</a>
+
+(1) Using the sample code in this zip file, you can communicate with the livy server through REST API.
+
+(2) The sample data and code is able to use after unzipping the attached file and uploading jupyter lab.
 
 # Spark on Hadoop
 You could create spark session by using the yarn scheduler of hadoop. If using yarn scheduler, the hadoop cluster is necessary. Then a new cluster contains hadoop service is needed. The new one is a hadoop cluster with master and n slaves, and one spark master and jupyter-lab is added on.   
