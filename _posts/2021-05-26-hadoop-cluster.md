@@ -85,11 +85,11 @@ e.g.
 
 - job management: localhost:8088
 
-![hadoop-ui-job](https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/posts/hadoop-cluster/hadoop-ui-job.png)
+<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/posts/hadoop-cluster/hadoop-ui-job.png" alt="hadoop-ui-job">
 
 - HDFS management: loclahost:9870
 
-![hadoop-ui-hdfs](https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/posts/hadoop-cluster/hadoop-ui-hdfs.png)
+<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/posts/hadoop-cluster/hadoop-ui-hdfs.png" alt="hadoop-ui-hdfs">
 
 ### 2. Access to hadoop master shell
 (1) CLI used above is occupied by foreground process of hadoop, Open a new CLI(=shell) at host. Then, move into the path docker scripts are in.
@@ -167,7 +167,7 @@ Hive service needs HDFS, so you should execute hive where the hadoop cluster is 
 
 (3) Web ui address of hiveserver is _localhost:10002_.
 
-![hive-ui](https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/posts/hadoop-cluster/hive-ui.png)
+<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/posts/hadoop-cluster/hive-ui.png" alt="hive-ui">
 
 ### 2. Connect to hiveserver with beeline CLI
 Beeline is a CLI to connect hiveserver and run some hive commands. It's bundle of hive installation.
@@ -227,7 +227,7 @@ Hbase saves their meta information in zookeeper for smooth server management and
 
 (3) Web ui address of hbase master is _localhost:16010_.
 
-![hbase-ui](https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/posts/hadoop-cluster/hbase-ui.png)
+<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/posts/hadoop-cluster/hbase-ui.png" alt="hbase-ui">
 
 ### 3. Create and delete Hbase data
 
