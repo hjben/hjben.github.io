@@ -7,7 +7,6 @@ summary: How to construct and execute a Hadoop-ecosystem cluster with docker-com
 ---
 
 # Description
-
 - Construct Hadoop-ecosystem cluster composed of 1 master, 1 DB, and n of slaves, using docker-compose.
 - Get experience of hadoop map-reduce routine and hive, sqoop, and hbase system, among the hadoop ecosystem.
 
