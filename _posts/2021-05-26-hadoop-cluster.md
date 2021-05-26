@@ -24,7 +24,7 @@ summary: How to construct and execute a Hadoop-ecosystem cluster with docker-com
 - zookeeper 3.6.2
 - mariadb 10.5
 
-(3) The reason of using jdk 1.8.0 is hive is completely supports with jdk11. And hbase with 1.6.0 is used because of the compatibility with sqoop, yet the latest version of hbase is 2.4.2. The latest version is used in other things.
+(3) The reason of using jdk 1.8.0 is hive is not completely supports with jdk11. And hbase with 1.6.0 is used because of the compatibility with sqoop, yet the latest version of hbase is 2.4.2. The latest version is used in other things.
  
 (4) All files related to this practice are in my github. If you're used to Dockerfile, you can revise the image with Dockerfile in github.
 
