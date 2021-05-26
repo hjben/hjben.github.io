@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Hadoop ecosystem cluster with docker-compose
+title: Hadoop ecosystem with docker-compose
 featured-img: sleek
 category: [Data Engineering]
+summary: How to construct and execute a Hadoop-ecosystem cluster with docker-compose.
 ---
 
 # Description
@@ -84,11 +85,11 @@ e.g.
 
 - job management: localhost:8088
 
-![hadoop-ui-job](/_img/posts/hadoop-cluster/hadoop-ui-job.png)
+![hadoop-ui-job](https://hjben.github.io/_img/posts/hadoop-cluster/hadoop-ui-job.png)
 
 - HDFS management: loclahost:9870
 
-![hadoop-ui-hdfs](/_img/posts/hadoop-cluster/hadoop-ui-hdfs.png)
+![hadoop-ui-hdfs](https://hjben.github.io/_img/posts/hadoop-cluster/hadoop-ui-hdfs.png)
 
 ### 2. Access to hadoop master shell
 (1) CLI used above is occupied by foreground process of hadoop, Open a new CLI(=shell) at host. Then, move into the path docker scripts are in.
@@ -166,7 +167,7 @@ Hive service needs HDFS, so you should execute hive where the hadoop cluster is 
 
 (3) Web ui address of hiveserver is _localhost:10002_.
 
-![hive-ui](/_img/posts/hadoop-cluster/hive-ui.png)
+![hive-ui](https://hjben.github.io/_img/posts/hadoop-cluster/hive-ui.png)
 
 ### 2. Connect to hiveserver with beeline CLI
 Beeline is a CLI to connect hiveserver and run some hive commands. It's bundle of hive installation.
@@ -226,7 +227,7 @@ Hbase saves their meta information in zookeeper for smooth server management and
 
 (3) Web ui address of hbase master is _localhost:16010_.
 
-![hbase-ui](/_img/posts/hadoop-cluster/hbase-ui.png)
+![hbase-ui](https://hjben.github.io/_img/posts/hadoop-cluster/hbase-ui.png)
 
 ### 3. Create and delete Hbase data
 
