@@ -92,7 +92,7 @@ http://127.0.0.1:8888/lab?token=e76b79faeabb826699a80166e39c5627390923dc24e053aa
 ### 3. Pyspark session build
 (1) Create a new notebook in the jupyter lab.
 
-(2) Import SparkSession and build a spark session. The address of spark master is _spark://master:7077_, and also be set with the number of cpu core and amount of memory space. From now on, all codes ran in the notebook is python code.
+(2) Import SparkSession and build a spark session. The address of spark master is _spark://master:7077_, and also be set with the number of cpu core and amount of memory space. From now on, all codes running in the notebook is python code.
 ```
 from pyspark.sql import SparkSession
 
