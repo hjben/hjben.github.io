@@ -73,7 +73,7 @@ e.g.
 ### 1. Execute spark
 (1) Spark master and workers are run when the container created, you could save the time to enter spark execution command.
 
-(2) If no errors found in the process above, you can access the spark web ui. The address url of web ui is _localhost:8080_.
+(2) If no errors found in the process above, you can access the spark web ui. The address of web ui is _localhost:8080_.
 
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/spark-cluster/spark-job-ui.png" alt="spark-job-ui"> 
 
