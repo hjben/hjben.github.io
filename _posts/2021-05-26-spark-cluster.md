@@ -25,11 +25,6 @@ summary: How to construct and execute a Spark and livy cluster with docker-compo
                                      
 [https://github.com/hjben/docker](https://github.com/hjben/docker)   
 Sub-folders related on: jupyter-lab, spark
- 
-(4) All files related to this practice are in my github. If you're used to Dockerfile, you can revise the image with Dockerfile in github.
-
-[https://github.com/hjben/docker](https://github.com/hjben/docker)   
-Sub-folders related on: hadoop-eco, hadoop, zookeeper, mariadb
 
 (5) This practice uses shell script files in folder named by _docker-script_, where are sub-folder of each folder in github. This shell files get some parameter from user, and then constructs cluster and executes some files needed. docker-compose.yml file also be generated automatically in same path, and deleted when the docker-compose is down.
 
