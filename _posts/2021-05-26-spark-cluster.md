@@ -56,7 +56,7 @@ docker pull hjben/jupyter-lab:spark-livy
 
 e.g.
 ```
-./compose-up.sh 3.1.1 3 4 8 /Users/a10053/workspace/docker-ws/spark-notebook /tmp/spark_logs﻿
+./compose-up.sh 3.1.1 3 4 8 /Users/Shared/workspace/docker-ws/spark-notebook /tmp/spark_logs﻿
 ```
 
 (3) If you create spark containers, initialization and execution of spark will be done automatically. After running spark in background process, livy server also be executed in background. And then, jupyter lab service starts.
@@ -96,7 +96,7 @@ http://127.0.0.1:8888/lab?token=e76b79faeabb826699a80166e39c5627390923dc24e053aa
 ```
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName("BoazTestApp").master("spark://master:7077").config("spark.cores.max", "4").config("spark.sql.shuffle.partitions", "5").getOrCreate()
+spark = SparkSession.builder.appName("TestApp").master("spark://master:7077").config("spark.cores.max", "4").config("spark.sql.shuffle.partitions", "5").getOrCreate()
 spark
 ```
 ﻿<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/spark-cluster/spark-jupyter.png" alt="spark-job-ui"> 
@@ -158,7 +158,7 @@ docker pull hjben/hadoop:3.3.0-jdk1.8.0
 
 e.g.
 ```
-./compose-up.sh 3.3.0 3.1.1 3 /Users/a10053/workspace/docker-ws/spark-notebook /tmp/hadoop /tmp/hadoop_logs /tmp/spark_logs
+./compose-up.sh 3.3.0 3.1.1 3 /Users/Shared/workspace/docker-ws/spark-notebook /tmp/hadoop /tmp/hadoop_logs /tmp/spark_logs
 ```
 
 ### 3. Execute hadoop
@@ -186,7 +186,7 @@ http://127.0.0.1:8888/lab?token=e76b79faeabb826699a80166e39c5627390923dc24e053aa
 (2) Import SparkSession and build a spark session. Set spark master to _yarn_.
 ```
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName("BoazTestApp").master("yarn").config("spark.cores.max", "4").config("spark.sql.shuffle.partitions", "5").getOrCreate()
+spark = SparkSession.builder.appName("TestApp").master("yarn").config("spark.cores.max", "4").config("spark.sql.shuffle.partitions", "5").getOrCreate()
 
 spark
 ```

@@ -79,7 +79,7 @@ e.g.
 
 e.g.
 ```
-./compose-up.sh 2.7.0 3.0.0.5 3 10.0.3.1:2181,10.0.3.1:2182,10.0.3.1:2183 127.0.0.1 /Users/a10053/workspace/docker-ws/kafka-notebook /tmp/kafka /tmp/kafka_logs﻿
+./compose-up.sh 2.7.0 3.0.0.5 3 10.0.3.1:2181,10.0.3.1:2182,10.0.3.1:2183 127.0.0.1 /Users/Shared/workspace/docker-ws/kafka-notebook /tmp/kafka /tmp/kafka_logs﻿
 ```
 
 (7) When created kafka container, cmak web server also be run automatically.
