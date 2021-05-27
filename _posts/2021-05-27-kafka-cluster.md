@@ -113,9 +113,9 @@ e.g.
 Kafka needs zookeeper, they must be executed with the well-running zookeeper cluster. At this time, we'll use the zookeeper cluster made above.
 ﻿
 ### 1. ﻿Execute kafka
-(1) Open a new CLI(=shell) as much as the # of brokers (e.g. 3 CLIs). The reason of multi-opening is kafka broker service will be started as foreground process. 
+(1) Open a new CLI(=shell) as much as the # of brokers (e.g. 3 CLIs). The reason of multi-opening is kafka broker service will be started as foreground process. Then, move into the path docker scripts are in.
 
-(2) The parameter of kafka-start.sh file is number of broker server. There're 1 to the number of broker servers you entered when creating kafka server. You can start kafka service at the broker server by entering each command below at the new CLI separately. 
+(2) You can start kafka service at the broker server by entering each command below at the new CLI separately. The parameter of kafka-start.sh file is number of broker server. There're 1 to the number of broker servers you entered when creating kafka server.
 ```
 ./kafka-start.sh 1
 ./kafka-start.sh 2
