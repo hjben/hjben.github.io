@@ -8,9 +8,8 @@ permalink: /about/
 <br>
 
 ### 🔭 I’m currently working on ...
-- Data Scientist & Developer
+- Data Scientist & ML Engineer
 
 ### 🌱 I’m currently interested in ...
-- AutoML/AutoDL
-- Model Serving (Model Ops)
+- Model Serving (MLOps)
 - Data Pipeline, Data Engineering
