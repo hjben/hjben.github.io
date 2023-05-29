@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Install Docker-compose V2
-featured-img: shane-rounce-205187
+title: Install docker-compose V2
+featured-img: emile-perron-190221
 category: [Software Engineering]
 summary: How to install docker-compose V2.
 ---
