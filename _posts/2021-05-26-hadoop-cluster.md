@@ -44,7 +44,7 @@ Sub-folders related on: hadoop-eco, hadoop, zookeeper, mariadb
 The version of image maybe changed up, with update of the open-source version.
 ```
 docker pull hjben/hadoop-eco:3.3.0
-docker pull hjben/hbase:1.6.0-hadoop:3.3.0
+docker pull hjben/hbase:1.6.0-hadoop3.3.0
 docker pull hjben/mariadb:10.5
 ```
 
