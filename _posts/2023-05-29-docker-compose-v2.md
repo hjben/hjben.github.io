@@ -27,7 +27,7 @@ mkdir -p $DOCKER_CONFIG/cli-plugins
 
 (3) Download docker-compose file
 ```
-curl -SL "https://github.com/docker/compose/releases/download/v$(DOCKER_COMPOSE_VERSION)/docker-compose-$(uname -s)-$(uname -m)" -o $DOCKER_CONFIG/cli-plugins/docker-compose
+curl -SL "https://github.com/docker/compose/releases/download/v$(echo $DOCKER_COMPOSE_VERSION)/docker-compose-$(uname -s)-$(uname -m)" -o $DOCKER_CONFIG/cli-plugins/docker-compose
 ```
 
 (4) Change the permission
