@@ -8,7 +8,7 @@ permalink: /about/
 <br>
 
 ### 🔭 I’m currently working on ...
-- Data Scientist & ML Engineer
+- Data Scientist & Engineer
 
 ### 🌱 I’m currently interested in ...
 - Model Serving (MLOps)
