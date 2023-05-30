@@ -98,7 +98,7 @@ e.g.
 ### 3. Simple test for hadoop map-reduce
 (1) You can experience the simple hadoop map-reduce with the command below.
 ```
-yarn jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.2.jar pi 2 5
+yarn jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-$HADOOP_VERSION.jar pi 2 5
 ```
 
 ### 4. Practice for hadoop map-reduce: wordcount
