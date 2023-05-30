@@ -11,7 +11,7 @@ summary: How to construct and execute a Airflow celery cluster with docker-compo
 - Get experience of scheduling airflow dag.
 
 # Introduction
-(1) You're recommended to use machine with 16GB memory or above. Also, you need linux shell environment with docker and docker-compose installed. (I worked in MacOS system)
+(1) You're recommended to use machine with 16GB memory or above. Also, you need linux shell environment with docker and docker-compose V2 installed. (I worked with MacOS system)
 
 (2) Docker images are based on RedHat linux (CentOS 8) with bash shell, which is similar to real-world servers. Open-source versions are like below.
 - mariadb 10.5
