@@ -105,14 +105,14 @@ yarn jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-$HADOOP_V
 
 (1) Download and unzip the test data file.
 ```
-wget https://s3.ap-northeast-2.amazonaws.com/kmubigdata-movielensdata/ml-20m.zip -C /tmp
+wget https://s3.ap-northeast-2.amazonaws.com/kmubigdata-movielensdata/ml-20m.zip -O /tmp/ml-20m.zip
 cd /tmp && unzip ml-20m.zip
 ```
 
 (2) Upload the file to HDFS.
 ```
 hdfs dfs -mkdir -p /movies/
-hdfs dfs -put /tmp/movies.csv /movies/
+hdfs dfs -put /tmp/ml-20m/movies.csvmovies.csv /movies/
 ```
 
 (3) Check file in HDFS.
@@ -127,13 +127,80 @@ echo "export HADOOP_CLASSPATH=$(hadoop classpath)" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-(5) Build the jar file for wordcount. There're some codes in the jar file.
+(5) Build the jar file for wordcount. 
+
 ```
 cd tmp
 mkdir wordcount_classes
 
 javac -classpath $HADOOP_CLASSPATH -d wordcount_classes WordCount.java
 jar -cvf WordCount.jar -C wordcount_classes/ .
+```
+
+If WordCount.java file needs, make it with code below.
+
+```
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+public class WordCount {
+
+  public static class TokenizerMapper
+       extends Mapper<Object, Text, Text, IntWritable>{
+
+    private final static IntWritable one = new IntWritable(1);
+    private Text word = new Text();
+
+    public void map(Object key, Text value, Context context
+                    ) throws IOException, InterruptedException {
+      StringTokenizer itr = new StringTokenizer(value.toString());
+      while (itr.hasMoreTokens()) {
+        word.set(itr.nextToken());
+        context.write(word, one);
+      }
+    }
+  }
+
+  public static class IntSumReducer
+       extends Reducer<Text,IntWritable,Text,IntWritable> {
+    private IntWritable result = new IntWritable();
+
+    public void reduce(Text key, Iterable<IntWritable> values,
+                       Context context
+                       ) throws IOException, InterruptedException {
+      int sum = 0;
+      for (IntWritable val : values) {
+        sum += val.get();
+      }
+      result.set(sum);
+      context.write(key, result);
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+    Configuration conf = new Configuration();
+    Job job = Job.getInstance(conf, "word count");
+    job.setJarByClass(WordCount.class);
+    job.setMapperClass(TokenizerMapper.class);
+    job.setCombinerClass(IntSumReducer.class);
+    job.setReducerClass(IntSumReducer.class);
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
+    FileInputFormat.addInputPath(job, new Path(args[0]));
+    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+    System.exit(job.waitForCompletion(true) ? 0 : 1);
+  }
+}
 ```
 
 (6) Run hadoop map-reduce. input is /movies/movies.csv file on HDFS, and output path is /movies/movies_out/.
