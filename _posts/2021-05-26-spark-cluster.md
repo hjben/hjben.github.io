@@ -39,7 +39,7 @@ Sub-folders related on: jupyter-lab, spark
 The version of image maybe changed up, with update of the open-source version.
 ```
 docker pull hjben/spark:3.1.1-jdk1.8.0
-docker pull hjben/spark-livy:3.1.1
+docker pull hjben/spark:3.1.1-livy
 docker pull hjben/jupyter-lab:spark-livy
 ```
 
@@ -162,14 +162,14 @@ e.g.
 ```
 
 ### 3. Execute hadoop
-(1) After the containers are built, Execute the command _./hadoop-start.sh start_. Then hadoop service is started in the containers.
+(1) After the containers are built, Hadoop service is started in the containers automatically.
 
 (2) In the first time of run hadoop, HDFS volume would be formatted to use them.
 
 ### 4. Execute jupyter lab
 (1) When created containers, CLI used is occupied by foreground process of hadoop, Open a new CLI(=shell) at host to start jupyter lab separately. Then, move into the path docker scripts are in.
 
-(2) Enter _/jupyter-start.sh_ command to run jupyter lab.
+(2) Enter _./jupyter-start.sh_ command to run jupyter lab.
 
 (3) Copy the URL in the console and access the jupyter lab service. Copy and Paste the address started with 127.0.0.1 to your web browser. Token is changing value every time you run.
 
@@ -192,3 +192,5 @@ spark
 ```
 
 (3) When created, spark session would be seen and managed in the hadoop job web ui (localhost:8088).
+
+(4) If you're using yarn as spark master, the target data should be in hdfs, not notebook workspace.
