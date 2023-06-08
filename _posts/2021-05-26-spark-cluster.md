@@ -15,8 +15,8 @@ summary: How to construct and execute a Spark and livy cluster with docker-compo
 
 (2) Docker images are based on RedHat linux (CentOS 8) with bash shell, which is similar to real-world servers. Open-source versions are like below.
 - jdk 1.8.0 (java 8)
-- spark 3.1.1
-- livy 0.8.0 (alpha version. built manually)
+- spark 3.4.0
+- livy 0.7.0 (alpha version)
 - python 3.6
 
 (3) The reason of using jdk 1.8.0 is because of the compatibility with livy, The latest version is used in other things.
@@ -38,8 +38,8 @@ Sub-folders related on: jupyter-lab, spark
 ### 1. Download docker image
 The version of image maybe changed up, with update of the open-source version.
 ```
-docker pull hjben/spark:3.1.1-jdk1.8.0
-docker pull hjben/spark:3.1.1-livy
+docker pull hjben/spark:3.4.0-jdk1.8.0
+docker pull hjben/spark:3.4.0-livy
 docker pull hjben/jupyter-lab:spark-livy
 ```
 
@@ -47,7 +47,7 @@ docker pull hjben/jupyter-lab:spark-livy
 (1) Download the shell script in _spark/docker-script_ folder at the github and move them to the path where docker commands are available.
 
 (2) With _./compose-up.sh_ command, docker network and containers are generated. parameters must be entered behind the command with one blank (space-bar) and arranged by the order below. The command will not be executed when lack of number of parameters or wrong input type detected.
-- spark_version: Version of spark (3.1.1 is available now)
+- spark_version: Version of spark (3.4.0 and 3.1.1 is available now)
 - (The # of) workers: The number of spark workers (integer between 1 and 5)
 - (CPU)core: The number of CPU core of each spark worker (integer 1 or above)
 - mem (GiB): The amount of memory size of each spark worker (integer 1 or above. The unit is GiB)
@@ -56,7 +56,7 @@ docker pull hjben/jupyter-lab:spark-livy
 
 e.g.
 ```
-./compose-up.sh 3.1.1 3 4 8 /Users/Shared/workspace/docker-ws/spark-notebook /tmp/spark_logs﻿
+./compose-up.sh 3.4.0 3 4 8 /Users/Shared/workspace/docker-ws/spark-notebook /tmp/spark_logs
 ```
 
 (3) If you create spark containers, initialization and execution of spark will be done automatically. After running spark in background process, livy server also be executed in background. And then, jupyter lab service starts.
@@ -139,14 +139,14 @@ When using spark-submit command, you could work with spark container. Spark bin 
 The version of image maybe changed up, with update of the open-source version.
 A docker image is added for hadoop service. jdk 1.8.0 is used because of livy.
 ```
-docker pull hjben/hadoop:3.3.0-jdk1.8.0
+docker pull hjben/hadoop:3.3.5-jdk1.8.0
 ```
 
 ### 2. Generate docker container.
 (1) Download the shell script in _spark/docker-script/hadoop_ folder at the github and move them to the path where docker commands are available.
 
 (2) With _./compose-up.sh_ command, docker network and containers are generated. parameters must be entered behind the command with one blank (space-bar) and arranged by the order below. The command will not be executed when lack of number of parameters or wrong input type detected.
-- spark_version: Version of spark (3.1.1 is available now)
+- spark_version: Version of spark (3.4.0 is available now)
 - (The # of) slaves: The number of hadoop slaves (integer between 1 and 5)
 - (CPU)core: The number of CPU core of each spark worker (integer 1 or above)
 - mem (GiB): The amount of memory size of each spark worker (integer 1 or above. The unit is GiB)
@@ -154,11 +154,11 @@ docker pull hjben/hadoop:3.3.0-jdk1.8.0
 - spark_log_path: Host path for saving spark log
 - hdfs_path: Host path for saving hdfs data
 - hadoop_log_path: Host path for saving hadoop log
-- hadoop_version: Version of hadoop (3.3.0 is available now)
+- hadoop_version: Version of hadoop (3.3.5 and 3.3.0 is available now)
 
 e.g.
 ```
-./compose-up.sh 3.3.0 3.1.1 3 /Users/Shared/workspace/docker-ws/spark-notebook /tmp/hadoop /tmp/hadoop_logs /tmp/spark_logs
+./compose-up.sh 3.3.5 3.4.0 3 /Users/Shared/workspace/docker-ws/spark-notebook /tmp/hadoop /tmp/hadoop_logs /tmp/spark_logs
 ```
 
 ### 3. Execute hadoop

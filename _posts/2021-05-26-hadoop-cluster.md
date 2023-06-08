@@ -89,6 +89,8 @@ e.g.
 
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/hadoop-cluster/hadoop-ui-hdfs.png" alt="hadoop-ui-hdfs">
 
+- Node management: localhost:8042 (master), localhost:18042 (slave1), localhost:28042 (slave2), ...
+
 ### 2. Access to hadoop master shell
 (1) CLI used above is occupied by foreground process of hadoop, Open a new CLI(=shell) at host. Then, move into the path docker scripts are in.
 
