@@ -13,11 +13,11 @@ summary: How to construct and execute a Spark and livy cluster with docker-compo
 # Introduction
 (1) You're recommended to use machine with 16GB memory or above. Also, you need linux shell environment with docker and docker-compose V2 installed. (I worked with MacOS system)
 
-(2) Docker images are based on RedHat linux (CentOS 8) with bash shell, which is similar to real-world servers. Open-source versions are like below.
+(2) Docker images are based on RedHat linux (Rockylinux 9) with bash shell, which is similar to real-world servers. Open-source versions are like below.
 - jdk 1.8.0 (java 8)
 - spark 3.4.0
 - livy 0.7.0 (alpha version)
-- python 3.6
+- python 3.11
 
 (3) The reason of using jdk 1.8.0 is because of the compatibility with livy, The latest version is used in other things.
                                       
