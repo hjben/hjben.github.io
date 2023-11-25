@@ -28,8 +28,8 @@ docker pull hjben/adp-python:latest
 (2) CLI(=Command Line Interface, 터미널)을 열고, _./container-init.sh_ 를 실행시켜서 Docker image를 실행시킵니다. Shell script의 Parameter는 정해진 순서대로 사이에 공백을 하나씩 넣어서 입력합니다. 파라미터 순서와 종류는 아래와 같습니다.
 - container_name: Docker container 이름 (사용자가 지정)
 - image_version: 사용할 Docker image 버전. 가장 최신 버전인 "latest"를 지정합니다.
-- port: Jupyter notebook을 사용할 포트 번호 (사용자가 지정). 사용 중인 다른 Jupyter가 없는 경우 8888 사용을 추천합니다.
-- workspace_path: 환경에 연결할 작업 path로, Jupyter notebook 환경에서 작업하는 파일이 저장되는 로컬 PC 내 공간입니다.
+- port: Jupyter notebook을 사용할 포트 번호 (사용자가 지정). 사용 중인 다른 Jupyter가 없는 경우 8888을 추천합니다.
+- workspace_path: 환경에 연결할 작업 path로, Jupyter notebook 환경에서 작업하는 파일이 저장되는 로컬 PC 경로입니다.
 - resource_limit: Docker container에 자원 제한을 걸 지 여부로, Optional입니다. 입력하지 않으면 시험장 환경인 2C CPU에 4G Memory로 제한이 걸리고, unlimited를 지정하면 자원 제한을 걸지 않습니다.
 
 e.g.
@@ -43,7 +43,7 @@ e.g.
 <br><br> Jupyter notebook 접속은 웹 브라우저에 접속한 후 localhost:{사용자 지정 포트}로 할 수 있습니다. <br><br>
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/adp-docker/notebook-main.png" alt="notebook-main">
 
-<br> 노트북 비밀번호도 설정이 가능하지만, 컴퓨터 재부팅 등으로 Container가 내려가면 원상 복구되어 토큰 로그인을 해야 합니다.
+<br> 노트북 비밀번호도 설정이 가능하지만, 컴퓨터 재부팅 등으로 Container가 내려가면 원상 복구되어 다시 토큰 로그인을 해야 합니다.
 
 (4) 다른 CLI를 열고 _./container-remove.sh_ 명령어를 수행하여 실행 중인 Jupyter notebook을 중지시킬 수 있습니다. 명령어 수행 시 삭제할 Container 이름인 container_name 파라미터를 지정해야 합니다.
 
@@ -71,11 +71,11 @@ docker rm -f {container_name}
 - 한글 폰트(malgun.ttf)가 설치되어 있으며, 설치 경로는 /usr/share/fonts/truetype/ 입니다.
 
 ### 3. Data Path
-- Container 내부의 기본 경로는 /workspace/Jupyter로 시험장의 dataset 경로인 /workspace/Jupyter/dataset에 맞췄습니다.
-- 로컬의 {workspace_path} 경로가 Container 내부의 /workspace/Jupyter 경로와 동기화됩니다. 로컬의 {workspace_path} 경로에 파일을 복사하면, Jupyter notebook 내 /workspace/Jupyter 경로 하위에 들어가며, 반대 케이스도 가능합니다.
+- Container 내부의 기본 경로는 시험장의 dataset 경로에 맞추어 /workspace/Jupyter입니다.
+- 로컬의 {workspace_path} 경로가 Container 내부의 /workspace/Jupyter 경로와 동기화됩니다. 로컬의 {workspace_path} 경로에 파일을 복사하면 Jupyter notebook 내 /workspace/Jupyter 경로 하위에 들어가며, 반대 케이스도 가능합니다.
 
 ### 4. Python Packages
-- Python 패키지 버전은 31회 ADP실기 시험안내를 참고하였으며, 이후 시험에서 패키지가 추가/변경되는 경우 업데이트 예정입니다.
+- Python 패키지 버전은 31회 ADP실기 시험안내를 참고하였으며, 이후 패키지가 추가/변경되는 경우 업데이트 예정입니다.
 - 패키지는 가능한 비슷한 버전으로 구성했지만 실제 시험장의 환경과는 차이가 있으며 일부 기능이 동작하지 않을 수도 있습니다.
 - 다음은 시험장에는 있지만, 현재 시점에서 설치가 불가능하여 Docker image에 없는 패키지 목록입니다.
 ```
