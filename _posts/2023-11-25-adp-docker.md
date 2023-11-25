@@ -22,10 +22,10 @@ Docker image를 다운로드 받습니다. 다운로드 명령어는 아래와 �
 docker pull hjben/adp-python:latest
 ```
 
-### 2-1. Generate docker container (Automated shell used)
+### 2-1. Generate docker container (Using Automated shell)
 (1) 위 Github 링크에서 _docker-script_ 경로에 있는 shell 파일을 다운로드 받고, Docker 명령어가 사용 가능한 경로로 파일을 복사합니다.
 
-(2) _./container-init.sh_ 를 실행시켜서 Docker image를 실행시킵니다. Shell script의 Parameter는 정해진 순서대로 사이에 공백을 하나씩 넣어서 입력합니다. 파라미터 순서와 종류는 아래와 같습니다.
+(2) CLI(=Command Line Interface, 터미널)을 열고, _./container-init.sh_ 를 실행시켜서 Docker image를 실행시킵니다. Shell script의 Parameter는 정해진 순서대로 사이에 공백을 하나씩 넣어서 입력합니다. 파라미터 순서와 종류는 아래와 같습니다.
 - container_name: Docker container 이름 (사용자가 지정)
 - image_version: 사용할 Docker image 버전. 가장 최신 버전인 "latest"를 지정합니다.
 - port: Jupyter notebook을 사용할 포트 번호 (사용자가 지정). 사용 중인 다른 Jupyter가 없는 경우 8888 사용을 추천합니다.
@@ -37,26 +37,27 @@ e.g.
 ./container-init.sh test-adp latest 8889 /Users/hyunjoong/Documents/workspace/notebook_base/adp unlimited
 ```
 
-(3) 실행이 완료되면 아래와 같이 Jupyter notebook 실행되는 것을 볼 수 있습니다. Jupyter notebook 접속은 웹 브라우저에 접속한 후 localhost:{사용자 지정 포트}로 할 수 있습니다. 접속 시 필요한 토큰은 실행 로그에서 확인 가능한데, 아래쪽에 있는 http://({container ID} or 127.0.0.1):8888/?token= 뒤에 있는 값을 복사하면 됩니다.
+(3) 실행이 완료되면 아래와 같이 로그가 발생하면서 Jupyter notebook 실행되는 것을 볼 수 있습니다. 로그 아래쪽에 있는 http://({container ID} or 127.0.0.1):8888/?token= 뒤에 있는 값이 로그인에 필요한 토큰입니다.
 
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/adp-docker/notebook-log.png" alt="notebook-log">
+<br><br> Jupyter notebook 접속은 웹 브라우저에 접속한 후 localhost:{사용자 지정 포트}로 할 수 있습니다. <br><br>
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/adp-docker/notebook-main.png" alt="notebook-main">
 
-노트북 비밀번호도 설정이 가능하지만, 컴퓨터 재부팅 등으로 Container가 내려가면 원상 복구되어 토큰 로그인을 해야 합니다.
+<br> 노트북 비밀번호도 설정이 가능하지만, 컴퓨터 재부팅 등으로 Container가 내려가면 원상 복구되어 토큰 로그인을 해야 합니다.
 
-(4) _./container-remove.sh_ 명령어로 실행 중인 Jupyter notebook을 중지시킬 수 있습니다. 명령어 수행 시 삭제할 Container 이름인 container_name 파라미터를 지정해야 합니다.
+(4) 다른 CLI를 열고 _./container-remove.sh_ 명령어를 수행하여 실행 중인 Jupyter notebook을 중지시킬 수 있습니다. 명령어 수행 시 삭제할 Container 이름인 container_name 파라미터를 지정해야 합니다.
 
 ### 2-2. Generate docker container (Manual)
-(1) 아래의 두 Docker 명령어를 직접 수행하여 Container를 생성할 수 있습니다. 중괄호로 표시된 Parameter들은 2-1에서 container-init.sh 파일의 Parameter와 동일합니다.
+(1) CLI를 열고, 아래의 두 Docker 명령어를 직접 수행하여 Container를 생성할 수 있습니다. 중괄호로 표시된 Parameter들은 2-1에서 container-init.sh 파일의 Parameter와 동일합니다.
 
 ```
 docker run --name {container_name} -d -t -p {port}:8888 -v {workspace_path}:/workspace/Jupyter hjben/adp-python:{image_version}
 docker exec -it {container_name} bash -c "jupyter-notebook --ip=0.0.0.0"
 ```
 
-(2) 실행이 완료되면 Jupyter notebook 실행되는 것을 볼 수 있습니다. Jupyter notebook 접속은 localhost:{사용자 지정 포트}로 할 수 있습니다. 접속 시 필요한 토큰은 실행 로그에서 확인 가능한데, http://({container ID} or 127.0.0.1):8888/?token= 뒤에 있는 값을 복사하면 됩니다.
+(2) 실행이 완료되면 로그가 발생하면서 Jupyter notebook 실행되는 것을 볼 수 있습니다. 로그 아래쪽에 있는 http://({container ID} or 127.0.0.1):8888/?token= 뒤에 있는 값이 로그인에 필요한 토큰입니다.
 
-(3) 아래 Docker 명령어를 직접 수행하여 실행 중인 Jupyter notebook을 중지시킬 수 있습니다.
+(3) 다른 CLI를 열고, 아래 Docker 명령어를 직접 수행하여 실행 중인 Jupyter notebook을 중지시킬 수 있습니다.
 
 ```
 docker rm -f {container_name}
