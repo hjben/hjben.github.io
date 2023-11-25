@@ -37,10 +37,12 @@ e.g.
 ./container-init.sh test-adp latest 8889 /Users/hyunjoong/Documents/workspace/notebook_base/adp unlimited
 ```
 
-(3) 실행이 완료되면 아래와 같이 Jupyter notebook 실행되는 것을 볼 수 있습니다. Jupyter notebook 접속은 웹 브라우저에 접속한 후 localhost:{사용자 지정 포트}로 할 수 있습니다. 접속 시 필요한 토큰은 실행 로그에서 확인 가능한데, http://({container ID} or 127.0.0.1):8888/?token= 뒤에 있는 값을 복사하면 됩니다.
+(3) 실행이 완료되면 아래와 같이 Jupyter notebook 실행되는 것을 볼 수 있습니다. Jupyter notebook 접속은 웹 브라우저에 접속한 후 localhost:{사용자 지정 포트}로 할 수 있습니다. 접속 시 필요한 토큰은 실행 로그에서 확인 가능한데, 아래쪽에 있는 http://({container ID} or 127.0.0.1):8888/?token= 뒤에 있는 값을 복사하면 됩니다.
 
-<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/hadoop-cluster/notebook-log.png" alt="notebook-log">
-<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/hadoop-cluster/notebook-main.png" alt="notebook-main">
+<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/adp-docker/notebook-log.png" alt="notebook-log">
+<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/adp-docker/notebook-main.png" alt="notebook-main">
+
+노트북 비밀번호도 설정이 가능하지만, 컴퓨터 재부팅 등으로 Container가 내려가면 원상 복구되어 토큰 로그인을 해야 합니다.
 
 (4) _./container-remove.sh_ 명령어로 실행 중인 Jupyter notebook을 중지시킬 수 있습니다. 명령어 수행 시 삭제할 Container 이름인 container_name 파라미터를 지정해야 합니다.
 
@@ -64,9 +66,8 @@ docker rm -f {container_name}
 - OS 버전과 Python 버전은 각각 Ubuntu 16.04, Python 3.7.4로 시험장과 동일합니다.
 - 한글 폰트(malgun.ttf)가 설치되어 있으며, 설치 경로는 /usr/share/fonts/truetype/ 입니다.
 - Container 내부의 기본 경로는 /workspace/Jupyter로 시험장의 dataset 경로인 /workspace/Jupyter/dataset에 맞췄습니다. 로컬의 {workspace_path} 경로가 Container 내부의 /workspace/Jupyter 경로와 동기화됩니다.
-
-- Python 패키지 종류는 제 31회 ADP 실기 시험안내를 참고하였으며, 이후 시험에서 패키지가 추가/변경되는 경우 업데이트 예정입니다.
-- 패키지는 가능한 비슷한 버전으로 구성했지만 실제 시험장의 환경과는 차이가 있으며 일부 기능이 동작하지 않을 가능성도 있습니다.
+- Python 패키지 버전은 31회 ADP실기 시험안내를 참고하였으며, 이후 시험에서 패키지가 추가/변경되는 경우 업데이트 예정입니다.
+- 패키지는 가능한 비슷한 버전으로 구성했지만 실제 시험장의 환경과는 차이가 있으며 일부 기능이 동작하지 않을 수도 있습니다.
 - 다음은 시험장에는 있지만, 현재 시점에서 설치가 불가능하여 Docker image에 없는 패키지 목록입니다.
 ```
 mkl-fft==1.0.11
