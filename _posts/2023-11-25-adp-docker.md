@@ -43,7 +43,7 @@ e.g.
 <br><br> Jupyter notebook 접속은 웹 브라우저에 접속한 후 localhost:{사용자 지정 포트}로 할 수 있습니다. <br><br>
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/adp-docker/notebook-main.png" alt="notebook-main">
 
-<br> 노트북 비밀번호도 설정이 가능하지만, 컴퓨터 재부팅 등으로 Container가 내려가면 원상 복구되어 다시 토큰 로그인을 해야 합니다.
+<br> 로그인 화면에서 노트북 비밀번호 설정도 가능하지만, 컴퓨터 재부팅 등으로 Container가 중지되면 원상복구되어 다시 토큰 로그인을 해야 합니다.
 
 (4) 다른 CLI를 열고 _./container-remove.sh_ 명령어를 수행하여 실행 중인 Jupyter notebook을 중지시킬 수 있습니다. 명령어 수행 시 삭제할 Container 이름인 container_name 파라미터를 지정해야 합니다.
 
@@ -68,7 +68,7 @@ docker rm -f {container_name}
 - 각각 Ubuntu 16.04, Python 3.7.4로 시험장 버전과 동일합니다.
 
 ### 2. Font
-- 한글 폰트(malgun.ttf)가 설치되어 있으며, 설치 경로는 /usr/share/fonts/truetype/ 입니다.
+- 한글 폰트로 맑은 고딕(malgun.ttf)이 설치되어 있으며, 설치 경로는 /usr/share/fonts/truetype/ 입니다.
 
 ### 3. Data Path
 - Container 내부의 기본 경로는 시험장의 dataset 경로에 맞추어 /workspace/Jupyter 입니다.
