@@ -63,15 +63,15 @@ docker exec -it {container_name} bash -c "jupyter-notebook --ip=0.0.0.0"
 docker rm -f {container_name}
 ```
 
-# Jupyter notebook informations
+# Jupyter notebook information
 ### 1. OS & Python Version
-- 각각 Ubuntu 16.04, Python 3.7.4로 시험장과 동일합니다.
+- 각각 Ubuntu 16.04, Python 3.7.4로 시험장 버전과 동일합니다.
 
 ### 2. Font
 - 한글 폰트(malgun.ttf)가 설치되어 있으며, 설치 경로는 /usr/share/fonts/truetype/ 입니다.
 
 ### 3. Data Path
-- Container 내부의 기본 경로는 시험장의 dataset 경로에 맞추어 /workspace/Jupyter입니다.
+- Container 내부의 기본 경로는 시험장의 dataset 경로에 맞추어 /workspace/Jupyter 입니다.
 - 로컬의 {workspace_path} 경로가 Container 내부의 /workspace/Jupyter 경로와 동기화됩니다. 로컬의 {workspace_path} 경로에 파일을 복사하면 Jupyter notebook 내 /workspace/Jupyter 경로 하위에 들어가며, 반대 케이스도 가능합니다.
 
 ### 4. Python Packages
