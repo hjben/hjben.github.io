@@ -64,9 +64,17 @@ docker rm -f {container_name}
 ```
 
 # Jupyter notebook informations
-- OS 버전과 Python 버전은 각각 Ubuntu 16.04, Python 3.7.4로 시험장과 동일합니다.
+### 1. OS & Python Version
+- 각각 Ubuntu 16.04, Python 3.7.4로 시험장과 동일합니다.
+
+### 2. Font
 - 한글 폰트(malgun.ttf)가 설치되어 있으며, 설치 경로는 /usr/share/fonts/truetype/ 입니다.
-- Container 내부의 기본 경로는 /workspace/Jupyter로 시험장의 dataset 경로인 /workspace/Jupyter/dataset에 맞췄습니다. 로컬의 {workspace_path} 경로가 Container 내부의 /workspace/Jupyter 경로와 동기화됩니다.
+
+### 3. Data Path
+- Container 내부의 기본 경로는 /workspace/Jupyter로 시험장의 dataset 경로인 /workspace/Jupyter/dataset에 맞췄습니다.
+- 로컬의 {workspace_path} 경로가 Container 내부의 /workspace/Jupyter 경로와 동기화됩니다. 로컬의 {workspace_path} 경로에 파일을 복사하면, Jupyter notebook 내 /workspace/Jupyter 경로 하위에 들어가며, 반대 케이스도 가능합니다.
+
+### 4. Python Packages
 - Python 패키지 버전은 31회 ADP실기 시험안내를 참고하였으며, 이후 시험에서 패키지가 추가/변경되는 경우 업데이트 예정입니다.
 - 패키지는 가능한 비슷한 버전으로 구성했지만 실제 시험장의 환경과는 차이가 있으며 일부 기능이 동작하지 않을 수도 있습니다.
 - 다음은 시험장에는 있지만, 현재 시점에서 설치가 불가능하여 Docker image에 없는 패키지 목록입니다.
