@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hadoop ecosystem with docker-compose
-featured-img: sleek
+featured-img: shane-rounce-205187
 category: [Data Engineering]
 summary: How to construct and execute a Hadoop-ecosystem cluster with docker-compose.
 ---
