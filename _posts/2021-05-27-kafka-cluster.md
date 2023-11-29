@@ -51,7 +51,7 @@ docker pull hjben/zookeeper:3.6.2
 (2) Download the shell script in _zookeeper/docker-script_ folder at the github and move them to the path where docker commands are available.
 
 (3) With _./compose-up.sh_ command, docker network and containers are generated. parameters must be entered behind the command with one blank (space-bar) and arranged by the order below. The command will not be executed when lack of number of parameters or wrong input type detected.
-- zookeeper_version: Version of zookeeper (3.6.2 is available now)
+- zookeeper_version: Version of zookeeper (3.8.1 and 3.6.2 is available now)
 - (The # of ensemble) servers: The number of ensemble servers (odd integer between 1 and 5)
 - web_user: User of zk-web (admin is recommended)
 - web_password: Password of zk-web (admin is recommended)
@@ -60,14 +60,14 @@ docker pull hjben/zookeeper:3.6.2
 
 e.g.
 ```
-./compose-up.sh 3.6.2 3 admin admin /tmp/zookeeper /tmp/zookeeper_logs ﻿
+./compose-up.sh 3.6.2 3 admin admin /tmp/zookeeper /tmp/zookeeper_logs
 ```
 
 (4) If created container, zookeeper initialization and execution of zookeeper is done. zk-web server starts after zookeeper run  as background process. Zookeeper ensemble between the containers also be set with automatically sensing another zookeeper containers.
 
 (5) CLI(Command Line Interface) used above is occupied by foreground process of zk-web server, Open a new CLI(=shell) at host. TDownload the shell script in _kafka/docker-script_ folder at the github and move them to the path where docker commands are available. The two docker-script should be placed in different path to prevent confusion.
 
-﻿(6) With _./compose-up.sh_ command, docker network and containers are generated. parameters must be entered behind the command with one blank (space-bar) and arranged by the order below. The command will not be executed when lack of number of parameters or wrong input type detected.
+(6) With _./compose-up.sh_ command, docker network and containers are generated. parameters must be entered behind the command with one blank (space-bar) and arranged by the order below. The command will not be executed when lack of number of parameters or wrong input type detected.
 - kafka_version: Version of kafka (2.7.0 is available now)
 - cmak_version: Version of cmak (3.0.0.5 is available now)
 - (The # of) servers: The number of broker servers (integer between 1 and 5)
@@ -96,7 +96,7 @@ e.g.
 ### 1. Execute zookeeper
 (1) zookeeper ensemble server and zk-web server are run when the container created, you could save the time to enter zookeeper execution command.
 
-(2) The address of web ui is _localhost:8080_ and ID/PW are known as you entered (maybe admin/admin) when making the zookeeper container generation. But there're no problems using guest, without login.
+(2) The address of web ui is _localhost:18080_ and ID/PW are known as you entered (maybe admin/admin) when making the zookeeper container generation. But there're no problems using guest, without login.
 
 ### 2. Search zk-web page
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/kafka-cluster/zk-web.png" alt="zk-web">
@@ -111,8 +111,8 @@ e.g.
 
 # Kafka
 Kafka needs zookeeper, they must be executed with the well-running zookeeper cluster. At this time, we'll use the zookeeper cluster made above.
-﻿
-### 1. ﻿Execute kafka
+
+### 1. Execute kafka
 (1) Open a new CLI(=shell) as much as the # of brokers (e.g. 3 CLIs). The reason of multi-opening is kafka broker service will be started as foreground process. Then, move into the path docker scripts are in.
 
 (2) You can start kafka service at the broker server by entering each command below at the new CLI separately. The parameter of kafka-start.sh file is number of broker server. There're 1 to the number of broker servers you entered when creating kafka server.
