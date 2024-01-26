@@ -1,13 +1,13 @@
 ---
 layout: post
-title: DataEdu SQLD 합격 패키지 수강후기
+title: 데이터에듀 SQLD 온라인강의 수강후기
 featured-img: emile-perron-190221
 category: [SQLD]
-summary: DataEdu SQLD 강의 수강후기
+summary: 데이터에듀 SQLD 합격 패키지 강의 체험단 수강후기
 ---
 
 # Introduction
-본 글은 SQLD 강의 체험단 수행 결과물이며, DataEdu에게 후기 대상 강의를 무상으로 제공받았음을 먼저 알립니다.
+본 글은 SQLD 강의 체험단 수행 결과물이며, 데이터에듀에게 후기 대상 강의를 무상으로 제공받았음을 먼저 알립니다.
 
 # 본인 소개
 어느 정도 Background를 가지고 있는 비전공자 직장인입니다. <br>
