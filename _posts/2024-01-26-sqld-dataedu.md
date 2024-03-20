@@ -2,7 +2,7 @@
 layout: post
 title: 데이터에듀 SQLD 온라인강의 수강후기
 featured-img: emile-perron-190221
-category: [SQLD]
+category: [Certificate]
 summary: 데이터에듀 SQLD 합격 패키지 강의 체험단 수강후기
 ---
 

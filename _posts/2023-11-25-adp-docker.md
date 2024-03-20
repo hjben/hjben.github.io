@@ -2,7 +2,7 @@
 layout: post
 title: ADP 시험을 위한 Jupyter Notebook 환경 구축
 featured-img: sleek
-category: [ADP]
+category: [Certificate]
 summary: Docker로 Jupyter notebook 환경 커스터마이징
 ---
 
