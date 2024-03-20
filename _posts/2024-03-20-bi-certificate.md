@@ -6,7 +6,7 @@ category: [Certificate]
 summary: 경영정보시각화능력 자격증 소개
 ---
 
-<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/visualization-certificate/poster.png" alt="poster"><br>
+<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/bi-certificate/poster.png" alt="poster"><br>
 
 2024년 올해부터, 대한상공회의소에서 "경영정보시각화능력" 이라는 데이터 분야 자격증을 신규 시행합니다. <br>
 
