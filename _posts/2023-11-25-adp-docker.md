@@ -16,14 +16,18 @@ summary: Docker로 Jupyter notebook 환경 커스터마이징
 - Docker image는 Macbook Pro M2, Docker desktop for Mac 4.22.0 버전에서 작성되었습니다. Docker image 실행 환경도 동일합니다.
 
 # Docker container construction
-### 1. Download docker image
+### 1. Run docker desktop
+먼저, Docker desktop을 설치하고, 실행합니다. <br>
+Docker 관련 명령어를 사용하려면 Docker desktop이 실행 중이어야 합니다.
+
+### 2. Download docker image
 Docker image를 다운로드 받습니다. 다운로드 명령어는 아래와 같습니다.
 ```
 docker pull hjben/adp-python:latest
 ```
 
-### 2-1. Generate docker container (Using Automated shell)
-(1) 위 Github 링크에서 _docker-script_ 경로에 있는 shell 파일을 다운로드 받고, Docker 명령어가 사용 가능한 경로로 파일을 복사합니다.
+### 3-1. Generate docker container (Using Automated shell)
+(1) 위 Github 링크에서 _docker-script_ 경로에 있는 shell 파일 2개 (container-init.sh, container-remove.sh)를 다운로드 받아서, Docker 명령어가 사용 가능한 경로로 파일을 복사합니다.
 
 (2) CLI(=Command Line Interface, 터미널)을 열고, _./container-init.sh_ 를 실행시켜서 Docker image를 실행시킵니다. Shell script의 Parameter는 정해진 순서대로 사이에 공백을 하나씩 넣어서 입력합니다. 파라미터 순서와 종류는 아래와 같습니다.
 - container_name: Docker container 이름 (사용자가 지정)
@@ -47,7 +51,7 @@ e.g.
 
 (4) 다른 CLI를 열고 _./container-remove.sh_ 명령어를 수행하여 실행 중인 Jupyter notebook을 중지시킬 수 있습니다. 명령어 수행 시 삭제할 Container 이름인 container_name 파라미터를 지정해야 합니다.
 
-### 2-2. Generate docker container (Manual)
+### 3-2. Generate docker container (Manual)
 (1) CLI를 열고, 아래의 두 Docker 명령어를 직접 수행하여 Container를 생성할 수 있습니다. 중괄호로 표시된 Parameter들은 2-1에서 container-init.sh 파일의 Parameter와 동일합니다.
 
 ```
