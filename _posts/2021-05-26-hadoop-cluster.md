@@ -53,7 +53,6 @@ docker pull hjben/mariadb:10.5
 
 (2) With _./compose-up.sh_ command, docker network and containers are generated. parameters must be entered behind the command with one blank (space-bar) and arranged by the order below. The command will not be executed when lack of number of parameters or wrong input type detected.
 - hadoop_version: Version of hadoop (3.3.0 and 3.2.2 are available now)
-- jdk_version: Version of jdk (only 1.8.0 is available)
 - (The # of) slaves: The number of hadoop slaves (integer between 1 and 5)
 - hdfs_path: Host path for saving hdfs data
 - hadoop_log_path: Host path for saving hadoop log
@@ -65,7 +64,7 @@ docker pull hjben/mariadb:10.5
 
 e.g.
 ```
-./compose-up.sh 3.3.0 1.8.0 3 /tmp/hadoop /tmp/hadoop_logs /tmp/hbase_logs /tmp/hive_logs /tmp/sqoop_logs mariadb /Users/Shared/workspace/docker-ws/maria-data
+./compose-up.sh 3.3.0 3 /tmp/hadoop /tmp/hadoop_logs /tmp/hbase_logs /tmp/hive_logs /tmp/sqoop_logs mariadb /Users/Shared/workspace/docker-ws/maria-data
 ```
 
 (3) There are volumes mounted on host path in each container for logs or data backup. This volumes are used for keep the data when docker containers are broken. Host path must be set with compatibility of your test environment, through some parameters of _./compose-up.sh_ command. The host paths you'll use are be made by yourself, preparing when they may not be automatically generated on the host.
