@@ -86,7 +86,7 @@ e.g.
 
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/hadoop-cluster/hadoop-ui-job.png" alt="hadoop-ui-job">
 
-- HDFS management: loclahost:9870
+- HDFS management: localhost:9870
 
 <img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/hadoop-cluster/hadoop-ui-hdfs.png" alt="hadoop-ui-hdfs">
 
