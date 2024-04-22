@@ -39,7 +39,7 @@ The version of image maybe changed up, with update of the open-source version.
 docker pull hjben/airflow:2.1.0
 docker pull hjben/jupyter-lab:latest
 docker pull hjben/redis:latest
-docker pull hjben/mariadb:10.5
+docker pull hjben/mariadb:11.3
 ```
 
 ### 2. Generate docker container.
@@ -60,7 +60,7 @@ e.g.
 ./compose-up.sh 2.1.0 2 /Users/Shared/workspace/docker-ws/airflow-notebook /tmp/airflow_logs admin admin mariadb /Users/Shared/workspace/docker-ws/maria-data ﻿
 ```
 
-(3) If you create airflow containers, initialization of metaDB and user will be done automatically. When the metaDB initialization is on progress, shell asks to you the root password of mariaDB. Then you may pass on mariaDB root password (maybe mariadb) to the shell. Redis server will be executed after initialization.
+(3) If you create airflow containers, initialization of metaDB and user will be done automatically. When the metaDB initialization is on progress, shell asks to you the root password of mariaDB. Then you may pass on mariaDB root password (maybe mariadb) to the shell. Redis server will be executed after initialization with foreground process and it occupies the CLI used before.
 
 (4) There are volumes mounted on host path in each container for logs or data backup. This volumes are used for keep the data when docker containers are broken. Host path must be set with compatibility of your test environment, through some parameters of _./compose-up.sh_ command. The host paths you'll use are be made by yourself, preparing when they may not be automatically generated on the host.
 
