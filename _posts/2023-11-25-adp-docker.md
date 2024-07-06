@@ -21,7 +21,7 @@ summary: Docker로 Jupyter notebook 환경 커스터마이징
 - Linux에서는 패키지 설치 관리자(apt, yum 등)로 설치 가능하며, Mac/Windows PC의 경우 Docker desktop을 설치하면 됩니다. 
 
 ### 2. Download docker image
-Docker 서비스가 실행 중인 상태에서 CLI(=Command Line Interface, 터미널 또는 PowerShell 등)을 열고, Docker image를 다운로드 받습니다. 다운로드 명령어 사용 시 지정해야 하는 image_version 파라미터는 '1.{시험회차}-{[arm64/amd64]}' 형태로 구성되어 있고, 입력 방법은 아래와 같습니다.
+Docker 서비스가 실행 중인 상태에서 CLI(=Command Line Interface, 터미널, PowerShell 등의 명령어 입력기)을 열고, Docker image를 다운로드 받습니다. 다운로드 명령어 사용 시 지정해야 하는 image_version 파라미터는 '1.{시험회차}-{[arm64/amd64]}' 형태로 구성되어 있고, 입력 방법은 아래와 같습니다.
 - 시험회차에는 ADP 시험 회차를 숫자(자연수)로 입력합니다. 시행 1주일 전 사용 패키지가 공개되므로, 이미 시행된 회차를 입력해야 합니다. (e.g. 32)
 - arm64/amd64 부분은 사용하는 PC의 CPU 아키텍쳐로, Apple silicon Mac 또는 arm64 CPU로 설정한 클라우드 서버의 경우에만 arm64를 사용하면 됩니다. 그 외 Intel CPU Mac과 Windows/Linux PC는 amd64 입니다.
 - 최신 버전을 의미하는 'latest' 버전은 2024.07.04 기준으로 '1.32-arm64' 버전 image와 동일하며, image_version을 생략할 경우 latest가 지정됩니다.
