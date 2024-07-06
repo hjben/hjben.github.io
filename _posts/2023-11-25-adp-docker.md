@@ -13,7 +13,7 @@ summary: Docker로 Jupyter notebook 환경 커스터마이징
 
 # Prerequisites
 - 저희 집은 Mac을 사랑하는 관계로... Windows PC가 없어서 Windows 환경 테스트를 별도로 진행하지 못했습니다. 그래서, Linux shell 기반의 OS(MacOS, Ubuntu Linux 등)에서 작업하시는 것을 추천드립니다.
-- Docker image는 Macbook Pro M2, Docker desktop for Mac 4.22.0 버전에서 작성되었으며, Docker image 실행 환경도 동일합니다.
+- Docker image는 최신 버전을 기준으로 Macbook Pro M2, Docker desktop for Mac 4.22.0 버전에서 작성되었으며, Docker image 실행 환경도 동일합니다.
 
 # Docker container construction
 ### 1. Run docker desktop
