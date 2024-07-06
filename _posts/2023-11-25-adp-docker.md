@@ -12,15 +12,16 @@ summary: Docker로 Jupyter notebook 환경 커스터마이징
 - Github link: [https://github.com/hjben/adp/tree/master/docker](https://github.com/hjben/adp/tree/master/docker)   
 
 # Prerequisites
-- 저희 집은 Mac을 사랑하는 관계로... Windows PC가 없어서 Windows 환경 테스트를 별도로 진행하지 못했습니다. 그래서, Linux shell 기반의 OS(MacOS, Ubuntu Linux 등)에서 작업하시는 것을 추천드립니다.
-- Docker image는 최신 버전을 기준으로 Macbook Pro M2, Docker desktop for Mac 4.22.0 버전에서 작성되었으며, Docker image 실행 환경도 동일합니다.
+- Docker image는 최신 버전을 기준으로 Macbook Pro M2, Docker desktop for Mac 4.22.0 버전에서 작성되었으며, 아래의 Docker image 실행 환경도 동일합니다.
+- Windows 환경에서도 구동 가능하지만 소소한 불편함이 발생할 수 있습니다. 가능하면 Linux shell 기반의 OS(MacOS, Ubuntu Linux 등)에서 작업하시는 것을 추천드립니다.
 
 # Docker container construction
-### 1. Run docker desktop
-먼저 Docker desktop을 설치하고, 실행합니다. Docker 관련 명령어를 사용하려면 Docker desktop이 실행 중이어야 합니다.
+### 1. Install & Run docker
+- 먼저 Docker를 설치합니다. Docker 관련 명령어를 사용하려면 Docker 프로그램이 실행 중이어야 합니다.
+- Linux에서는 패키지 설치 관리자(apt, yum 등)로 설치 가능하며, Mac/Windows PC의 경우 Docker desktop을 설치하면 됩니다. 
 
 ### 2. Download docker image
-Docker desktop이 실행 중인 상태에서 CLI(=Command Line Interface, 터미널 또는 PowerShell)을 열고, Docker image를 다운로드 받습니다. 다운로드 명령어 사용 시 지정해야 하는 image_version 파라미터는 '1.{시험회차}-{[arm64/amd64]}' 형태로 구성되어 있고, 입력 방법은 아래와 같습니다.
+Docker 서비스가 실행 중인 상태에서 CLI(=Command Line Interface, 터미널 또는 PowerShell 등)을 열고, Docker image를 다운로드 받습니다. 다운로드 명령어 사용 시 지정해야 하는 image_version 파라미터는 '1.{시험회차}-{[arm64/amd64]}' 형태로 구성되어 있고, 입력 방법은 아래와 같습니다.
 - 시험회차에는 ADP 시험 회차를 숫자(자연수)로 입력합니다. 시행 1주일 전 사용 패키지가 공개되므로, 이미 시행된 회차를 입력해야 합니다. (e.g. 32)
 - arm64/amd64 부분은 사용하는 PC의 CPU 아키텍쳐로, Apple silicon Mac 또는 arm64 CPU로 설정한 클라우드 서버의 경우에만 arm64를 사용하면 됩니다. 그 외 Intel CPU Mac과 Windows/Linux PC는 amd64 입니다.
 - 최신 버전을 의미하는 'latest' 버전은 2024.07.04 기준으로 '1.32-arm64' 버전 image와 동일하며, image_version을 생략할 경우 latest가 지정됩니다.
@@ -35,14 +36,20 @@ docker pull hjben/adp-python:1.32-arm64
 ```
 
 ### 3-1. Generate docker container (Using Automated shell)
+(0) (Windows의 경우) 'sh' 확장자 파일을 실행하기 위한 별도의 프로그램이 필요한데, git을 설치한 후 git 터미널을 이용하는 것이 가장 간단합니다.
+
 (1) 위 Github 링크에서 _docker-script_ 경로에 있는 shell 파일 2개 (container-init.sh, container-remove.sh)를 다운로드 받습니다.
 
 (2) CLI에서 앞서 다운로드 받은 _./container-init.sh_ 를 실행시켜서 Docker image를 실행시킵니다. Shell script의 Parameter는 정해진 순서대로 사이에 공백을 하나씩 넣어서 입력합니다. 파라미터 순서와 종류는 아래와 같습니다.
 - container_name: Docker container 이름 (사용자가 지정)
 - image_version: 사용할 Docker image 버전. 앞서 다운로드 받은 image의 버전을 지정합니다.
 - port: Jupyter notebook을 사용할 포트 번호 (사용자가 지정). 사용 중인 다른 Jupyter가 없는 경우 8888을 추천합니다.
-- workspace_path: 환경에 연결할 작업 path로, Jupyter notebook 환경에서 작업하는 파일이 저장되는 로컬 PC 경로입니다. 파일 구분자('/')는 운영체제에 따라 달라질 수 있습니다.
+- workspace_path: 환경에 연결할 작업 path로, Jupyter notebook 환경에서 작업하는 파일이 저장되는 로컬 PC 경로입니다. 파일 구분자('/')는 OS에 따라 달라질 수 있습니다.
 - resource_limit: Docker container에 자원 제한을 걸 지 여부로, Optional입니다. 입력하지 않으면 시험장 환경인 2C CPU에 4G Memory로 제한이 걸리고, unlimited를 지정하면 자원 제한을 걸지 않습니다.
+
+```
+./container-init.sh {container_name} {image_verion} {port} {workspace_path} {resource_limit}
+```
 
 e.g.
 ```
@@ -60,7 +67,7 @@ e.g.
 (4) 다른 CLI를 열고 _./container-remove.sh_ 명령어를 수행하여 실행 중인 Jupyter notebook을 중지시킬 수 있습니다. 명령어 수행 시 container_name 파라미터로 중지하고 싶은 Container 이름을 지정해야 합니다.
 
 ### 3-2. Generate docker container (Manual)
-(1) CLI를 열고, 아래의 두 Docker 명령어를 직접 수행하여 Container를 생성할 수 있습니다. 중괄호로 표시된 Parameter들은 2-1 단락에서 서술한 container-init.sh 파일의 Parameter와 동일합니다.
+(1) CLI를 열고, 아래의 두 Docker 명령어를 직접 수행하여 Container를 생성할 수 있습니다. Parameter들은 2-1 단락에서 서술한 container-init.sh 파일의 Parameter와 동일합니다.
 
 ```
 docker run --name {container_name} -d -t -p {port}:8888 -v {workspace_path}:/workspace/Jupyter hjben/adp-python:{image_version}
