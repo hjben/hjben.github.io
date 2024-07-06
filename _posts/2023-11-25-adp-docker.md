@@ -17,8 +17,7 @@ summary: Docker로 Jupyter notebook 환경 커스터마이징
 
 # Docker container construction
 ### 1. Run docker desktop
-먼저 Docker desktop을 설치하고, 실행합니다. <br>
-Windows 또는 MacOS 환경에서 Docker 관련 명령어를 사용하려면 Docker desktop이 실행 중이어야 합니다.
+먼저 Docker desktop을 설치하고, 실행합니다. Docker 관련 명령어를 사용하려면 Docker desktop이 실행 중이어야 합니다.
 
 ### 2. Download docker image
 Docker desktop이 실행 중인 상태에서 CLI(=Command Line Interface, 터미널 또는 PowerShell)을 열고, Docker image를 다운로드 받습니다. 다운로드 명령어 사용 시 지정해야 하는 image_version 파라미터는 '1.{시험회차}-{[arm64/amd64]}' 형태로 구성되어 있고, 입력 방법은 아래와 같습니다.
