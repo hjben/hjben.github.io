@@ -36,7 +36,7 @@ docker pull hjben/adp-python:1.32-arm64
 ```
 
 ### 3-1. Generate docker container (Using Automated shell)
-(0) (Windows의 경우) 'sh' 확장자 파일을 실행하기 위한 별도의 프로그램이 필요한데, git을 설치한 후 git 터미널을 이용하는 것이 가장 간단합니다.
+(0) (Windows의 경우) CMD나 PowerShell에서는 'sh' 확장자 파일을 실행할 수 없어서 별도 프로그램이 필요한데, 프로그램에 따라 추가 작업이 필요하거나 실행이 불가할 수도 있습니다. 따라서 3-2 단락의 방법을 추천드립니다.
 
 (1) 위 Github 링크에서 _docker-script_ 경로에 있는 shell 파일 2개 (container-init.sh, container-remove.sh)를 다운로드 받습니다.
 
