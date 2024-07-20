@@ -15,7 +15,7 @@ summary: [서평] 조정임. (2024). 핵심만 요약한 데이터 조작과 시
 따라서 본 글은 자격증을 취득한 현직자의 입장에서 책을 바라봤을 때 느낀 점을 서술합니다.
 
 # 첫인상
-<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/book-python-codebook/book-cover.png" alt="book-cover"><br>
+<img src ="https://raw.githubusercontent.com/hjben/hjben.github.io/master/_img/review-python-codebook/book-cover.png" alt="book-cover"><br>
 
 처음 책을 받아봤을 때의 느낌은 너무 얇은데? 였습니다. "파이썬 데이터 분석"이라는 주제를 가지는 보통의 다른 책과 비교했을 때 절반도 안되는 것 같았어요. (실제 제원상으로도 218페이지밖에 안 되긴 합니다.)
 빠르고 가볍게 읽어볼 수 있겠다는 생각과 이 책 하나로 데이터 조작과 시각화를 망라할 수 있을까? 하는 두 가지 생각이 함께 들었습니다.
