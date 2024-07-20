@@ -1,9 +1,9 @@
 ---
 layout: post
-title: [서평] 핵심만 요약한 데이터 조작과 시각화 파이썬 코드북 
+title: 서평 - 핵심만 요약한 데이터 조작과 시각화 파이썬 코드북 
 featured-img: sleek
 category: [Certificate]
-summary: [서평] 조정임. (2024). 핵심만 요약한 데이터 조작과 시각화 파이썬 코드북, 알고보니.
+summary: 서평 - 조정임. (2024). 핵심만 요약한 데이터 조작과 시각화 파이썬 코드북, 알고보니.
 ---
 
 # Introduction
